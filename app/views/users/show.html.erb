@@ -1,0 +1,19 @@
+<div class="profile-container">
+  <h1>Hey, <%=@current_user.name.capitalize%>!</h1>
+  <br>
+  <h3>Your order history:</h3>
+    <% if @current_user.orders.count > 0 %>
+        <% @current_user.orders.each do |order|%>
+          <%=link_to "Order No. #{order.id} ", order_path(order.id)%>&nbsp from<%= order.created_at %><br>
+        <% end %>
+    <% else %>
+      <%="You have not placed any orders yet."%> <br>
+    <%end %>
+
+  <br>
+  <div id="button-container">
+    <button type="button" class="btn btn-danger btn-sm"><a href = '/users/<%=@current_user.id%>/edit'>Edit My Details</a></button>
+
+    <button type="button" class="btn btn-danger btn-sm"><%= link_to "Delete My Account", @current_user, :data => {:confirm => "Are you sure?", :method => "delete", class: 'delete-button float-button'} %></button>
+  </div>
+</div>
