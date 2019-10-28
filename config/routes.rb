@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'welcome#index'
+  root 'cuisines#index'
   resources :order_items
   resources :cuisines, only: [:index, :show]
   resources :restaurants
@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   get '/secretapology', to: 'sessions#absolve', as: 'absolve'
   delete '/logout', to: 'sessions#destroy', as: 'logout'
-
+  
+  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
