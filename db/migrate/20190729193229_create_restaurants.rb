@@ -7,7 +7,7 @@ class CreateRestaurants < ActiveRecord::Migration[5.2]
       t.string :review
       t.string :description
       t.string :img_url
-      t.references :cuisine, foreign_key: true
+      t.integer :cuisine_id
       t.timestamps
     end
   end

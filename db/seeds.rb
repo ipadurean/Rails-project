@@ -42,7 +42,7 @@ end
   )
 end
 
-2000.times do
+200.times do
   begin
     response =  RestClient::Request.execute(method: :get, url: "https://loremflickr.com/600/400/food", max_redirects: 0)
   rescue RestClient::ExceptionWithResponse => err

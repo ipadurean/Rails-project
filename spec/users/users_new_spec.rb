@@ -46,10 +46,6 @@ describe "Sign up page" do
     expect(page).to have_field("user[password_confirmation]")
   end
 
-  it "has an 'Enter your delivery address' labeled field" do
-    visit '/users/new'
-    expect(page.body).to include("Enter your delivery address:")
-  end
 
   it "has an address field" do
     visit '/users/new'
@@ -76,10 +72,6 @@ describe "Sign up page" do
     expect(page).to have_field("user[phone_number]")
   end
   
-  it "has a 'Create Account' button" do
-    visit '/users/new'
-    expect(page).to have_button("Create Account")
-  end
 
 
   
